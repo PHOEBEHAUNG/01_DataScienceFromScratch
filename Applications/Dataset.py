@@ -116,7 +116,7 @@ class IRIS_import:
         self.train_x, self.val_x, self.train_y, self.val_y = train_test_split(X_selected, iris.target, test_size = 0.2, random_state = 0)
         # print(type(self.train_x)) # <class 'numpy.ndarray'>
 
-        # avoid overflow 執行特徵縮放
+        # avoid overflow by doing scale
         scaler = StandardScaler()
         self.train_x = scaler.fit_transform(self.train_x)
         self.val_x = scaler.fit_transform(self.val_x)
